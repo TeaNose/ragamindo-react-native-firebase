@@ -144,22 +144,6 @@
       "packageInstance": "new RNFirebasePackage()"
     }
   },
-  "scripts": {
-    "build": "genversion src/version.js && npm run build-src",
-    "build-flow": "flow-copy-source -i */__tests__* src dist",
-    "build-src": "BABEL_ENV=publish babel src -d dist --ignore __tests__ --copy-files",
-    "build-src-watch": "genversion src/version.js && BABEL_ENV=development babel src -d dist --ignore __tests__ --copy-files --watch",
-    "clean": "rimraf dist/",
-    "format": "npm run format:assets && npm run lint -- --fix",
-    "format:assets": "prettier --ignore-path .gitignore --write \"**/*.{json,md}\"",
-    "lint": "eslint ./src",
-    "postinstall": "opencollective-postinstall || exit 0",
-    "precommit": "lint-staged",
-    "prepare": "npm run clean && npm run build && npm run build-flow",
-    "prepublishOnly": "npm run validate-ts-declarations",
-    "validate-flow-declarations": "flow",
-    "validate-ts-declarations": "tsc --project ./"
-  },
   "types": "dist/index.d.ts",
   "version": "5.3.1"
 }
